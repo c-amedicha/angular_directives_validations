@@ -1,0 +1,84 @@
+<div class="row">
+    <div class="captorComponents col-xs-12">
+        <form name="form2" novalidate ng-controller="otherCtrls as ctrl" captor-form-validation validation-mode="create">
+            <div class="row">
+                <div class="borderComponentBox col-xs-6">
+                    <h4> Toggle Button </h4>
+                    <div class="form-group">
+                        <div class="header-toggle captor-header-toggle toggles m-t-20">
+                            <label class="control-label">Select a value <span>*</span></label>
+                            <div class="toggle-wrap">
+                                <label class="toggle-radio">
+                                    <input name="abc" 
+                                        type="radio" 
+                                        value="true" 
+                                         ng-required="true"
+                                        ng-model="ctrl.value" />
+                                    <span>Yes</span>
+                                </label>
+                                <label class="toggle-radio arrest-option">
+                                    <input name="abc" 
+                                        type="radio" 
+                                        value="false" 
+                                         ng-required="true"
+                                        ng-model="ctrl.value"/>
+                                    <span>No</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="borderComponentBox col-xs-6">
+                    <h4> Check Box </h4>
+                    <div class="form-group">
+                        <label class="control-label"> 
+                            Checkbox <span>*</span>
+                        </label>
+                        <div class="checkbox-group">
+                            <input id="checkdisplay" class="checkbox-custom collateral-types" name="checkdisplay" type="checkbox" ng-model="ctrl.checkValue" ng-required="true" />
+                            <label for="checkdisplay" class="checkbox-custom-label">Select me</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="borderComponentBox col-xs-6">
+                    <h4> Pills </h4>
+                        <div class="form-group form-group input-controls">
+                            <label class="control-label">Select on or off <span>*</span></label>
+                            <label class="switch-checkbox">
+                                <input id="pilldisplay" class="toggle" name="pilldisplay" type="checkbox" ng-model="vm.value" ng-required="true">
+                                <div class="slider-checkbox round"></div>
+                            </label>
+                        </div>
+                    <br>
+                </div>
+                <div class="borderComponentBox col-xs-6">
+                    <h4> Radio Button </h4>
+                    <div class="row">
+                        <div class="form-group col-sm-12">
+                            <label class="control-label">Frivolous <span>*</span></label>
+                            <div class="inline-radios">
+                                <div class="radio-group radio-inline">
+                                    <input id="radio-1" class="radio-custom" name="radio-group" value="All" type="radio" ng-model="ctrl.radioSelect" ng-required="true">
+                                    <label for="radio-1" class="radio-custom-label">All</label>
+                                </div>
+                                <div class="radio-group radio-inline">
+                                    <input id="radio-2" class="radio-custom " value="Yes" name="radio-group" type="radio" ng-model="ctrl.radioSelect" ng-required="true">
+                                    <label for="radio-2" class="radio-custom-label">Yes</label>
+                                </div>
+                                <div class="radio-group radio-inline">
+                                    <input id="radio-3" class="radio-custom" value="No" name="radio-group" type="radio" ng-model="ctrl.radioSelect" ng-required="true">
+                                    <label for="radio-3" class="radio-custom-label">No</label>
+                                </div>
+                            </div>
+                        </div>
+                    <br>
+                </div>
+            </div>
+            </div>
+            <button type="submit" class="btn">Submit Form</button>
+            <button type="reset" class="btn">Reset Form</button>
+        </form>
+    </div>
+</div>

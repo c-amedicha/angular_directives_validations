@@ -1,0 +1,4 @@
+{
+  "https-proxy": "http://proxy.pa.gov:8080",
+  "proxy": "http://proxy.pa.gov:8080"
+}

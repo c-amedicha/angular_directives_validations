@@ -1,0 +1,18 @@
+<div class="uiTreeComponents" ng-controller="uiTreeControls as ctrl">
+    <div ui-tree>
+      <ol ui-tree-nodes="" ng-model="ctrl.data">
+        <li ng-repeat="item in ctrl.data" ui-tree-node>
+          <div ui-tree-handle>
+            {{item.title}}
+          </div>
+          <ol ui-tree-nodes="" ng-model="item.nodes">
+            <li ng-repeat="subItem in item.nodes" ui-tree-node>
+              <div ui-tree-handle>
+                {{subItem.title}}
+              </div>
+            </li>
+          </ol>
+        </li>
+      </ol>
+    </div>
+</div>

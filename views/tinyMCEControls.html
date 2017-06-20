@@ -1,0 +1,52 @@
+<div class="tinyMCEComponents">
+    <form name="form4" ng-controller="tinyMCEControls as ctrl" captor-form-validation validation-mode="create">
+
+        <div class='form-group captorTinyMce'>   
+        <textarea captor-tinymce
+                           name="tinyText2"
+                           label="Note 2"
+                           ng-model="ctrl.tinyText3" 
+                           disabled-block="false"
+                           maxchar-count="45"
+                           ng-required="true"
+                           >
+            </textarea>
+            <h5>{{ctrl.tinyText3}}</h5>
+        </div>
+        <br>
+        <br>
+        <div class='form-group captorTinyMce'>
+             <textarea captor-tinymce
+                       name="tinyText"
+                       label="Note 1"
+                       ng-model="ctrl.tinyText" 
+                       disabled-block="false"
+                       maxchar-count="35"
+                       ng-required="true"
+                       ></textarea>
+            <h5>{{ctrl.tinyText}}</h5>
+        </div>
+        <br>
+        <br>
+        <button type="submit" class="btn">Submit Form</button>
+        <button type="reset" class="btn">Reset Form</button>
+        
+    </form>
+    
+    
+    
+    
+    
+    
+</div>
+
+
+
+
+<captor-toastr title="Info title" message="Hey! Your page is loaded!!" type="info"></captor-toastr>
+        <captor-toastr title="Notification title" message="Hey! Message Success!!"></captor-toastr>
+        <captor-toastr title="Warning title" message="Hey! Values missed!!" type="warning" display-toastr="ctrl.displayToastr"></captor-toastr>
+        <captor-toastr title="Notification title" message="Hey! Message Success!!"></captor-toastr>
+        <captor-toastr title="Success title" message="Hey! Message Success!!"></captor-toastr>
+        <captor-toastr title="Error title" message="Hey! Message Faliure!!" type="error"></captor-toastr>
+        <captor-toastr title="Notification title" message="Hey! Message Success!!" type="success"></captor-toastr>

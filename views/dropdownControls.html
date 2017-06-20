@@ -1,0 +1,57 @@
+<div class="captorComponents">
+    <form name="form3" ng-controller="dropdownControls as ctrl"  ng-submit="ctrl.submitFunc()" captor-form-validation validation-mode="edit">
+        <div class="form-group captor-small">
+            <div options="ctrl.multiSelectInput" 
+                selected-model="ctrl.multiSelectVals"
+                placeholder="Select multiple values"
+                ng-model="ctrl.multiSelectVals111"
+                single-selection="false" 
+                name="multiSelectDropdown"
+                label="Multi Select Dropdown"
+                enable-search="true"
+                captor-dropdown
+                captor-min-select="3"
+                id-field="Value"
+                value-field="Description"
+                >
+            </div> 
+        </div>
+            <br><br><br>
+        <div class="form-group captor-medium">
+            <div options="ctrl.singleSelectInput" 
+                placeholder-var="ctrl.placeH"
+                selected-model="ctrl.singleSelectVals"
+                ng-model="ctrl.singleSelectVals"
+                single-selection="true"  
+                name="singleSelectDropdown"
+                id-field="id"
+                value-field="val"
+                label="Single Select Dropdown"
+                captor-dropdown
+                ng-required="true"
+                >
+            </div>
+        </div>
+       <br><br>
+        <div class="form-group captor-large">
+            <div options="ctrl.stringArrayInput" 
+                placeholder-var="ctrl.placeH"
+                selected-model="ctrl.stringArrayVal"
+                ng-model="ctrl.stringArrayVal"
+                single-selection="true"  
+                name="singleSelectDropdown"
+                id-field="id"
+                value-field="val"
+                label="Single Select Dropdown"
+                options-strings="true"
+                captor-dropdown
+                ng-required="true"
+                >
+            </div>
+        </div>
+          <h5>{{ctrl.stringArrayVal}}</h5>
+           <br><br>
+            <button type="submit" class="btn">Submit Form</button>
+            <button type="reset" class="btn">Reset Form</button>
+    </form>
+</div>

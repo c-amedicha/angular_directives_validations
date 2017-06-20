@@ -1,0 +1,73 @@
+<div class="">
+    <form name="form5" ng-controller="datepickerControls as ctrl" ng-submit="ctrl.submitFunc()" captor-form-validation validation-mode="create">
+        <div class="">
+            <div class="form-group captorDatePicker captor-small">
+                <div class="input-group controls">
+                    <datetimepicker ng-model="ctrl.selected" 
+                                    date-format="MM/dd/yyyy" 
+                                    name="datepicker1"
+                                    placeholder-var="ctrl.abc"
+                                    hidden-time="false"
+                                    label="DatePicker With Time"
+                                    ng-required="true"
+                                    captor-datetime-picker>
+                    </datetimepicker>
+                </div>
+            </div>
+            <h5>{{ctrl.selected}}</h5>
+            <br><br>
+            <div class="form-group captorDatePicker captor-medium">
+                <div class="input-group controls" disabledDate>
+                    <datetimepicker ng-model="ctrl.selected2" 
+                                    date-format="MM/dd/yyyy" 
+                                    name="datepicker2"
+                                    placeholder-var="ctrl.abc"
+                                    hidden-time="true"
+                                    label="DatePicker Without Time"
+                                    ng-required="true"
+                                    captor-datetime-picker>
+                    </datetimepicker>
+                </div>
+            </div>
+            <h5>{{ctrl.selected2}}</h5>
+            <br><br><br><br>
+            <div class="form-group captorDatePicker captor-large">
+                <div class="input-group controls">
+                    <datetimepicker ng-model="ctrl.selected3" 
+                                    date-format="MM/dd/yyyy" 
+                                    name="datepicker3"
+                                    placeholder-var="ctrl.abc"
+                                    hidden-time="false" 
+                                    label="DatePicker - No Future Dates"
+                                    ng-required="true"
+                                    maximum-date="ctrl.maxDate"
+                                    min-time="ctrl.minTime"
+                                    captor-datetime-picker>
+                    </datetimepicker>
+                </div>
+            </div>
+
+            <h5>{{ctrl.selected3}}</h5>
+            <br><br><br><br>
+            <div class="form-group captorDatePicker">
+                <div class="input-group controls">
+                    <datetimepicker ng-model="ctrl.selected4" 
+                                    date-format="MM/dd/yyyy" 
+                                    name="datepicker4"
+                                    placeholder-var="ctrl.abc"
+                                    hidden-time="false" 
+                                    label="DatePicker - No Past Dates"
+                                    date-options="ctrl.dtOptions"
+                                    ng-required = "true"
+                                    captor-datetime-picker>
+                    </datetimepicker>
+                </div>
+            </div>
+            <h5>{{ctrl.selected4}}</h5>
+            <br>
+            <br>
+            <button type="submit" class="btn">Submit Form</button>
+            <button type="reset" class="btn">Reset Form</button>
+        </div>
+    </form>
+</div>

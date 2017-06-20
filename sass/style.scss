@@ -1,0 +1,742 @@
+@import "captor-color-theme";
+
+/******************************************* Form components  *******************************************/
+
+.captorComponents {
+    margin: auto;
+    label {
+        margin-top: 10px;
+    }
+    .form-control {
+        margin-bottom: 15px;
+    }
+}
+
+.captorFormDisabled {
+    cursor: not-allowed;
+}
+
+.captorFormEnabled {
+    cursor: pointer;
+}
+
+//Need To Verify
+numSpinnerOff::-webkit-inner-spin-button, 
+numSpinnerOff::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+}
+input::-ms-clear {
+    display: none;
+}
+
+/******************************************* Form Validations *******************************************/
+.form-group{
+    .error-msg{
+        margin-top: 0px;
+        position: absolute;
+    }
+}
+
+.captorValidationErrorLabel,
+.captorValidationErrorMsg,
+.captorValidationErrorMsgTinyMce {
+    color: $red-dark !important;
+    span{
+        border-color: $red-dark !important;
+        &.caret{
+            color: $red-dark !important;
+        }
+    }
+    
+}
+.captorValidationErrorMsg{
+    left: 0px;
+    margin-top: -10px;
+    position: absolute;
+    font-weight: 300;
+    font-size: 14px
+}
+
+.captorTinyMceError {
+    .mce-tinymce.mce-container.mce-panel {
+        border: 2px solid $red-dark !important;
+    }
+}
+
+.captorValidationErrorRadioButton {
+    @extend .captorValidationErrorMsg;
+}
+
+
+.validation-failed-border {
+    border: 2px solid $red-dark !important;
+}
+
+//Commenting For Testing
+/*
+.validation-failed-label {
+    color: $red-dark;
+}*/
+
+span.error-span {
+    border: 2px solid $red-dark !important;
+    color: $red-dark !important;
+}
+
+/******************************************* Dropdown Component *******************************************/
+
+.customDropdown {
+//    width: 100%;
+    text-align: left;
+    position: relative;
+    & button {
+        text-align: left;
+        overflow: hidden;
+    }
+    & .dropdown-menu {
+        max-height: 198px;
+        overflow-y: auto;
+        overflow-x: hidden;
+        min-width: 100%;
+        -webkit-box-shadow: 0 3px 8px $black;
+        -moz-box-shadows: 0 3px 8px $black;
+        -ms-box-shadow: 0 3px 8px $black;
+        box-shadow: 0 3px 8px $black;
+        z-index: 9999 !important;
+        border: none;
+        border-radius: 5px;
+        background: $dark;
+        & li {
+            border-bottom: 1px solid $clean-gray-med;
+            &>a {
+                font-family: Verdana, Arial, sans-serif;
+                font-size: 10.5px;
+                font-weight: 400;
+                padding: 2px 5px;
+                color: $nav-icon-color;
+            }
+            &>a:hover,
+            &>a:focus {
+                background-color:$gray-dark;
+            }
+        }
+        & li:nth-last-child(3){
+            border-bottom: none;
+            margin-bottom: 2px;
+        }
+        & li.divider {
+            display: none;
+        }
+        & .dropdown-header {
+            margin-top: 0px;
+        }
+    }
+    & .btn-group {
+        display: block;
+    }
+}
+
+.customDropdownMultiSelect {
+    @extend .customDropdown;
+    & .dropdown-menu {
+        & li:first-child {
+            display: inline-block;
+            float: left;
+            padding-left: 5px;
+        }
+        & li:nth-child(2) {
+            display: inline-block;
+            float: right;
+            padding-right: 5px;
+        }
+        & .dropdown-header {
+            margin-top: 26px;
+        }
+    }
+}
+
+.captorDropdownSingleSelect {
+//    width: 100%;
+    & span.caret {
+        float: right;
+        height: 34px;
+        margin-top: -34px;
+        padding-left: 19px;
+        top: 34px;
+        right: -2px;
+        position: absolute;
+        border-radius: 0px 20px 16px 0px;
+        width: 35px;
+        white-space: nowrap;
+        vertical-align: middle;
+        display: table-cell;
+        background: $gray-dark;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 1;
+        color: $nav-icon-color;
+        text-align: center;
+        cursor: pointer;
+        border: 2px solid $gray-med;
+        z-index: 0;
+        box-sizing: border-box;
+        &:before {
+            content: "\f104";
+            font-family: 'Ionicons';
+            font-size: 16px;
+            left: -10px;
+            position: relative;
+            top: 25%;
+        }
+        &:hover {
+            border-color: $yellow-med;
+            border-left-color: $yellow-med;
+        }
+    }
+}
+
+
+
+
+/****************************************** Captor Tiny MCE ******************************************/
+
+.captorTinyMceTextWarning {
+    color: $yellow-med;
+}
+
+.captorTinyMceTextDanger {
+    color: $delete;
+}
+
+span.remCountTinyMce{
+        font-size: 12px;
+        position: absolute;
+        right: 0px;
+}
+
+.mce-i-newtab:before{
+    font-family: "icomoon";
+    color: $gray-darker;
+    content:"\ecbb"
+}
+
+.mce-container{
+    body{
+        font-family: roboto !important;
+        font-size: 16px;
+        margin-top: 0;
+        word-wrap: break-word;
+    }
+}
+
+.captorTinymceInput {
+    position: relative;
+}
+
+
+/****************************************** Date Time Picker **********************************************/
+
+.captorDatePicker {
+    .captorValidationErrorMsg{
+        top: 45px;    
+    }
+    position: relative;
+    & .input-group {
+        width: 100%;
+        & .datetimepicker-wrapper {
+            display: block;
+            input {
+                width: 100%;
+                border-bottom-right-radius: 34px;
+                border-top-right-radius: 34px;
+            }
+        }
+    
+        & .datePickerSpan {
+            position: absolute;
+            border-left: 2px solid $gray-med !important;
+            right: 0px;
+            top: 0px;
+            height: 34px;
+            width: 34px;
+            z-index: 999;
+            &:before {
+                position: absolute;
+                left: 8px;
+                top: 5px;
+            }
+            &:hover{
+                border-left: 2px solid $yellow-med !important;
+            }
+        } 
+        & .showDateTime{
+            & .datetimepicker-wrapper {
+                input:first-child {
+                    width: 85%;
+                }
+            }
+            &+.datePickerSpan {
+                position: absolute;
+                right: 15%;
+            }
+        }
+        .input-group-addon{
+            &.right{
+                &.date-field{
+                    &.disabledPickerSpan{
+                        border-color: #5c5c5c;
+                        border-left: none !important;
+                        &:hover{
+                            cursor: not-allowed;
+                            border-color: #5c5c5c !important;
+                            border-left: none !important;
+                        }
+                        &::before{
+                            color: #5c5c5c;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.uib-datepicker-popup {
+    background-color: $gray-darker;
+    button {
+        background: transparent;
+        border: none;
+    }
+    table {
+        font-size: .9em;
+        border-collapse: collapse;
+        thead {
+            th {
+                button {
+                    color: $yellow-med;
+                    &:hover {
+                        background-color: $gray-darker;
+                        border: none;
+                        color: $yellow-med;
+                    }
+                }
+            }
+            tr {
+                small {
+                    font-size: 12px;
+                    text-transform: uppercase;
+                    font-weight: 300;
+                    padding: .1em .3em;
+                    font-weight: 300;
+                    border: 0;
+                    color: $nav-icon-color;
+                }
+            }
+        }
+        tbody {
+            border-top: 1px solid $yellow-med;
+            tr {
+                button {
+                    border: 1px solid;
+                    background-color: $clean-gray-med;
+                    border-radius: 0px;
+                    &:hover {
+                        background-color: $gray-dark !important;
+                        outline: 0;
+                        border: none;
+                    }
+                }
+            }
+        }
+        button {
+            span {
+                display: block;
+                padding: .2em;
+                text-decoration: none;
+                &.text-info {
+                    color: $nav-icon-color;
+                }
+            }
+            &.active {
+                span {
+                    &.text-info {
+                        color: $clean-gray-dark;
+                    }
+                }
+            }
+        }
+        .btn-default {
+            &.active {
+                color: $white;
+                background-color: $yellow-med;
+                border-color: $yellow-med;
+            }
+        }
+    }
+}
+
+.btn-default:active,
+.open>.dropdown-toggle.btn-default {
+    color: $white;
+    background-color: $yellow-med;
+    border-color: $yellow-med;
+}
+
+.uib-button-bar {
+    border-top: 1px solid $yellow-med;
+    .uib-datepicker-current,
+    .uib-clear {
+        &:hover {
+            background: transparent;
+        }
+    }
+    .uib-close {
+        display: none;
+    }
+}
+
+.uib-daypicker {
+    padding: 5px;
+    outline: 0;
+    .btn {
+        &.btn-default {
+            margin-left: 0px;
+            background: $clean-gray-med;
+            font-weight: 400;
+            color: $nav-icon-color;
+            border: none;
+            &:hover {
+                background-color: $gray-dark !important;
+                transition: none;
+            }
+            &.uib-title {
+                background: none;
+                padding: 0px;
+                color: $yellow;
+                font-family: Verdana, Arial, sans-serif;
+                pointer-events: none;
+                font-size: 12px;
+            }
+            &.uib-left,
+            &.uib-right {
+                background: none;
+                padding: 0px;
+                width: 1.8em;
+                height: 1.8em;
+                font-size: 12px;
+                color: $yellow;
+                font-weight: 200;
+            }
+        }
+    }
+}
+
+.uib-daypicker.uib-daypicker .btn.active {
+    background-color: $yellow;
+    color: $clean-gray-dark;
+    text-align: right;
+}
+
+.uib-daypicker.uib-daypicker .btn.active:hover {
+    background-color: $yellow !important;
+}
+
+.uib-weeks {
+    & .uib-day {
+        padding: 1px;
+        & .btn.btn-default:hover,
+        & .btn.btn-default:focus {
+            background: $yellow-med;
+            color: $white;
+            outline: none;
+            -webkit-transition: none;
+            -moz-transition: none;
+            -ms-transition: none;
+            -o-transition: none;
+            transition: none;
+        }
+        & .text-muted {
+            color: transparent;
+            background: none;
+            display: none !important;
+            visibility: hidden;
+        }
+    }
+}
+
+.uib-timepicker {
+    position: absolute;
+    top: -30px;
+    margin-left: 5px;
+    .uib-increment,
+    .uib-decrement {
+        span {
+            color: $yellow-med;
+        }
+    }
+    input {
+        border-radius: 15px !important;
+    }
+    .uib-time {
+        button {
+            font-size: 0.9em;
+            text-align: center;
+            margin: 3pz;
+            padding: 4px;
+        }
+        input {
+            width: 50px !important;
+        }
+        .help-block{
+            display: none;
+        }
+    }
+    .has-error {
+        .form-control {
+            border-color: $gray-med;
+            &:hover {
+                border-color: $yellow;
+            }
+        }
+    }
+}
+
+.error-dateTime {
+    .has-error {
+        .form-control {
+            border-color: $red-dark;
+        }
+    }
+}
+
+/************************************Radio Button************************************/
+
+.captor-header-toggle {
+    label {
+        color: $yellow-med;
+        vertical-align: middle;
+        text-transform: uppercase;
+    }
+    .toggle-wrap {
+        label {
+            &.toggle-radio {
+                margin: 0px;
+                input {
+                    &+span {
+                        border: 4px solid $nav-icon-color;
+                        border-radius: 50%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.has-error {
+    //Enterprise Component SASS Starts Here
+    .captor-header-toggle{
+        .error-msg{
+            left: 10px;
+        }
+    }
+    .multiselect-parent{
+        .error-msg{
+            margin-top: -10px;
+        }
+    }
+     //Enterprise Component SASS Ends Here
+}
+
+
+/****************************************** Toastr Notifications **********************************************/
+
+#toast-container .toast{
+    box-shadow: none;
+}
+
+span{
+    &.toast-close-button{
+        z-index: 1033;
+        color: $delete;
+        position: absolute;
+        right: 5px;
+        top: 3px;
+        font-size: 16px;
+        text-shadow: none;
+    }
+    &.toast-close-button:focus, &.toast-close-button:hover{
+        color: $yellow-med;
+    }
+}
+.toast-color {
+    background-color: $dark;
+    text-align: center;
+    vertical-align: middle;
+    padding: 8px;
+    display: inline-block;
+    margin: 0px auto;
+    position: absolute;
+    transition: all 0.5s ease-in-out;
+    z-index: 1031;
+    top: 20px;
+    right: 25px;
+    margin-bottom: 10px;
+}
+
+.toast-title-class {
+    color: $yellow-med;
+    text-align: left;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.toast-message-class {
+    color: $nav-icon-color;
+    font-size: 14px;
+    text-align: left;
+}
+
+.fa-check-circle{
+    position: absolute;
+    left: 15px;
+    top: 22px;
+    font-size: 20px;
+    color: $green-darker;
+}
+
+.fa-times-circle{
+    @extend .fa-check-circle;
+    color: $red-dark;
+}
+
+.fa-exclamation-circle{
+    @extend .fa-check-circle;
+    color: $yellow-med;
+}
+
+.fa-info-circle{
+    @extend .fa-check-circle;
+    color: $blue-light;
+}
+
+/********************************************************* UI Tree *******************************************************/
+.angular-ui-tree-handle {
+    background: #f8faff;
+    border: 1px solid #dae2ea;
+    color: #7c9eb2;
+    padding: 10px 10px;
+}
+
+.angular-ui-tree-handle:hover {
+    color: #ff9800;
+    background: #555758;
+    border-color: #555758;
+}
+
+.angular-ui-tree-placeholder {
+    background: #f0f9ff;
+    border: 2px dashed #bed2db;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+tr.angular-ui-tree-empty {
+    height:100px
+}
+
+.tree-node {
+    border: 1px solid #35393e;
+    background: #2c2e31;
+    color: #aab2b7;
+}
+
+.nodrop {
+    background-color: #f2dede;
+}
+
+.tree-node-content {
+    margin: 10px;
+}
+.tree-handle {
+    padding: 10px;
+    background: #428bca;
+    color: #FFF;
+    margin-right: 10px;
+}
+
+.angular-ui-tree-empty{
+    background-image: none !important;
+    background: transparent;
+    border:none;
+}
+/****************************************** Component Classes for all sizes **********************************************/
+.captor-small{
+    .smallSettings{
+        width: 16.5em;
+        font-size: 12.5px;
+    }
+    input{
+        @extend .smallSettings;
+    }
+    textarea{
+        @extend .smallSettings;
+        min-height: 120px;
+    }
+    &.customDropdownMultiSelect,&.customDropdown{
+        width: 16.5em;
+        button{
+            font-size: 12.5px;
+        }
+    }
+    &.captorDatePicker{
+        width: 16.5em;
+    }
+}
+
+
+.captor-medium{
+    .mediumSettings{
+        width: 23em;
+        font-size: 13px;
+    }
+    input{
+        @extend .mediumSettings;
+    }
+    textarea{
+        @extend .mediumSettings;
+        min-height: 150px;
+    }
+    &.customDropdownMultiSelect,&.customDropdown{
+        width: 23em;
+        button{
+            font-size: 13px;
+        }
+    }
+    &.captorDatePicker{
+        width: 23em;
+    }
+}
+
+
+.captor-large{
+    .largeSettings{
+        width: 37em;
+    }
+    input{
+        @extend .largeSettings;
+    }
+    textarea{
+        @extend .largeSettings;
+    }
+    &.customDropdownMultiSelect,&.customDropdown{
+        width: 37em;
+    }
+    &.captorDatePicker{
+        width: 37em;
+    }
+}

@@ -1,0 +1,20 @@
+<input-group>
+    <ng-form name="{{vm.name}}Form" novalidate>
+        <label-area>
+            <label for="{{vm.name}}" class="control-label"> 
+                {{vm.label}}
+                </label>
+        </label-area>
+        <div class="captorReadOnlyInput">
+            <input type="{{vm.type}}" 
+                    class="form-control" 
+                    placeholder="{{vm.placeholder}}" 
+                    autocomplete="off" 
+                    ng-model-options="{allowInvalid: true , debounce: 10}" 
+                    name="{{vm.name}}" 
+                    id="{{vm.name}}" 
+                    ng-model="vm.value" 
+                    ng-readonly="{{vm.readOnlyValue}}">
+        </div>
+    </ng-form>
+</input-group>

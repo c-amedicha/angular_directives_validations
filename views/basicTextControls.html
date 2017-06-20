@@ -1,0 +1,144 @@
+<div class="row" captorComponents>
+    <form name="form2" ng-controller="homectrl as ctrl" ng-submit="ctrl.onSubmit()" captor-form-validation validation-mode="edit">
+    <div class="col-xs-6">
+            <div class="form-group captor-small">
+                <label for="firstName" class="control-label"> 
+                   First Name
+                   <span>*</span>
+                </label>
+                <input type="text" 
+                    class="form-control" 
+                    name="firstName" 
+                    placeholder="Enter First Name"
+                    ng-model="ctrl.values.abc"
+                    ng-required="true"
+                    > 
+            </div>
+            <br>
+            <div class="form-group captor-medium">
+            <label for="lastName" class="control-label"> 
+               Last Name
+               <span>*</span>
+            </label>
+            <input type="text" 
+                class="form-control" 
+                name="lastName" 
+                placeholder="Enter Last Name"
+                ng-model="ctrl.values.pqr"
+                ng-minlength="5"
+                   ng-required="true"
+                > 
+            </div>
+            <br>
+            <div class="form-group">
+            <label for="email" class="control-label"> 
+               Email
+               <span>*</span>
+            </label>
+            <input type="text" 
+                class="form-control" 
+                name="email" 
+                placeholder="Enter Email"
+                > 
+            </div>
+            <br>
+            <div class="form-group">
+            <label for="cellphone" class="control-label"> 
+               Enter Cell Number
+            </label>
+            <input type="phone" 
+                class="form-control" 
+                name="cellphone" 
+                placeholder="Enter Cell Number"
+                ng-model="ctrl.cellNumber"
+                captor-input-box
+                >  
+            </div>
+        <h6>{{ctrl.cellNumber}}</h6>
+            <br>
+            <div class="form-group captor-large">
+            <label for="homephone" class="control-label"> 
+               Enter Home Number
+            </label>
+            <input type="phone" 
+                class="form-control" 
+                name="homephone" 
+                placeholder="Enter Home Number"
+                ng-model="ctrl.homeNumber"
+                captor-input-box
+                ng-required="true"
+                >  
+            </div>
+        <h6>{{ctrl.homeNumber}}</h6>
+            <br>
+            <div class="form-group">
+            <label for="ssnNumber" class="control-label"> 
+               Enter SSN Number
+            </label>
+            <input type="ssn" 
+                class="form-control" 
+                name="ssnNumber" 
+                placeholder="Enter SSN Number" 
+                ng-model="ctrl.ssnNumber"
+                ng-required="true"
+                captor-input-box>
+            </div>
+        <h6>{{ctrl.ssnNumber}}</h6>
+            <br>
+            <div class='form-group captor-large'>   
+                <label class="control-label">Enter simple text</label>
+                <textarea
+                           name="tinyText3"
+                           ng-model="ctrl.tinyText4" 
+                           ng-required="true"
+                           class="form-control property-comments-textarea"
+                           >
+                </textarea>
+            </div>
+            <br>
+            <br>
+            <button type="submit" class="btn">Submit Form</button>
+            <button type="reset" class="btn">Reset Form</button>
+    </div>
+    <div class="col-xs-6">
+            <div class="form-group">
+                <label for="formNumber" class="control-label"> 
+                   Enter Number
+                </label>
+                <input type="number" 
+                    class="form-control numSpinnerOff" 
+                    name="formNumber" 
+                    placeholder="Enter Number"
+                    ng-model="ctrl.formNumber"
+                    >  
+            </div>
+            <div class="form-group">
+                <label for="formPassword" class="control-label"> 
+                   Enter Password
+                </label>
+                <input type="password" 
+                    class="form-control" 
+                    name="formPassword" 
+                    placeholder="Enter Password"
+                    ng-model="ctrl.formPassword"
+                    >  
+            </div>
+        <br>
+             <div class="form-group">
+                <label for="formConfirmPassword" class="control-label"> 
+                   Enter Password
+                </label>
+                <input type="password" 
+                    class="form-control" 
+                    name="formConfirmPassword" 
+                    placeholder="Enter Confirm Password"
+                    ng-model="ctrl.formConfirmPassword"
+                    >  
+            </div>
+            <captor-input-readonly label="ReadOnly SSN" placeholder="Enter SSN" type="ssn" name="ssn2" hide-display="true" value="ctrl.values.ssn2">
+            </captor-input-readonly>
+            <captor-input-readonly label="ReadOnly Phone" placeholder="Enter Phone" type="phone" name="phone2" hide-display="true" value="ctrl.values.phone2">
+            </captor-input-readonly>
+    </div>
+ </form>
+</div>
